@@ -1,0 +1,336 @@
+@font-face {
+  font-family: "Public Sans";
+  src: url("/assets/fonts/Public_Sans/PublicSans-VariableFont_wght.ttf");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Public Sans light";
+  src: url("/assets/fonts/Public_Sans/PublicSans-VariableFont_wght.ttf");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Public Sans Bold";
+  src: url("/assets/fonts/Public_Sans/PublicSans-VariableFont_wght.ttf");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --color-dark: hsl(233, 26%, 24%);
+  --color-light: hsl(0, 0%, 100%);
+  --Lime-Green: #00A3FF;
+  --Bright-Cyan: hsl(192, 70%, 51%);
+  --Grayish-Blue: hsl(233, 8%, 62%);
+  --Light-Grayish-Blue: hsl(220, 16%, 96%);
+  --Very-Light-Gray: hsl(0, 0%, 98%);
+  --container-padding: 12vw;
+  --section-padding: 10vh;
+  --gap-padding: clamp(5em, 10vw, 8em);
+  --animation-primary: 0.5s ease-in-out;
+  --animation-smooth: 1.5s ease-in-out;
+  --border-radius: 0.3em;
+  --gap-padding: clamp(1.5em, 3vw, 1.8em);
+}
+
+@media screen and (max-width: 720px) {
+  :root {
+    --container-padding: 8vw;
+    --section-padding: 8vh;
+  }
+}
+
+/* ---------------------------------------------------------- Body -------------------------------------------------- */
+*,
+*::after,
+*::before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  font-family: "Public Sans", sans-serif;
+  font-weight: 400;
+  line-height: 1.1;
+  font-size: 18px;
+  color: var(--color-dark);
+  background-color: var(--Very-Light-Gray);
+  font-style: normal;
+}
+
+html,
+body {
+  width: 100%;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  scroll-behavior: smooth;
+}
+
+/* General */
+
+canvas,
+img,
+video {
+  max-width: 100%;
+  height: auto;
+  box-sizing: border-box;
+}
+
+svg {
+  max-width: none;
+  height: auto;
+  box-sizing: border-box;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+a {
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+  color: var(--color-dark);
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+li,
+ul,
+ol,
+span,
+strong,
+em {
+  padding: 0;
+  margin: 0;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: normal;
+}
+
+h1 {
+  font-family: "Public Sans", sans-serif;
+  font-size: clamp(2.2rem, 4vw, 5rem);
+  font-weight: 400;
+  line-height: 1.1;
+  font-style: normal;
+  color: var(--color-dark);
+}
+
+h2 {
+  font-family: "Public Sans", sans-serif;
+  font-size: clamp(2rem, 3vw, 4.2rem);
+  line-height: 1.1;
+  font-weight: 400;
+  font-style: normal;
+  color: var(--color-dark);
+}
+
+h3 {
+  font-family: "Public Sans", sans-serif;
+  font-size: clamp(1rem, 2vw, 1.3em);
+  line-height: 1.1;
+  font-weight: 400;
+  font-style: normal;
+  color: var(--color-dark);
+}
+
+h4 {
+  font-family: "Public Sans", sans-serif;
+  font-size: clamp(1.1rem, 2vw, 0.9em);
+  font-weight: 400;
+  line-height: 1.1;
+  font-style: normal;
+  color: var(--color-dark);
+}
+
+p {
+  font-family: "Public Sans light", sans-serif;
+  font-size: clamp(0.8rem, 2vw, 1em);
+  font-weight: 300;
+  line-height: 1.1;
+  font-style: normal;
+  color: var(--Grayish-Blue);
+}
+
+p span {
+  font-size: 0.8em;
+}
+
+/* ------------------------- Main Elements -------------------------------------------------- */
+
+.section {
+  position: relative;
+  display: block;
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+
+.container {
+  position: relative;
+  margin: 0 auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.flex-col {
+  display: block;
+  width: 100%;
+  order: 2;
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+img.overlay {
+  object-fit: cover;
+}
+
+/*------------------------------------- BUTTONS ----------------------------------------*/
+.btn-row {
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+
+.btn {
+  position: relative;
+  border: 0;
+  outline: 0;
+  z-index: 1;
+}
+
+@keyframes gradientLoop {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: 0% 0;
+  }
+}
+
+.btn.primary .btn-click {
+  outline: 0;
+  pointer-events: all;
+  min-width: 5em;
+  height: 2.7em;
+  border-radius: 1.3em;
+  padding: 0;
+  will-change: transform;
+  cursor: pointer;
+  background: linear-gradient(
+      90deg,
+      #00A3FF,
+      #7BCFFF,
+      #00A3FF
+    )
+    0% / 200%;
+  transition: var(--animation-smooth);
+  display: flex;
+  align-items: center;
+  background-size: 200%;
+}
+
+.btn.primary .btn-click:hover {
+  animation: gradientLoop 1s linear infinite;
+  opacity: 0.5;
+  background-position: right;
+}
+
+.btn.primary .btn-text {
+  font-family: "Public Sans Bold", sans-serif;
+  font-size: 0.8em;
+  font-weight: 400;
+  color: var(--color-light);
+  padding: 0 1.8rem;
+}
+
+.btn .btn-link {
+  pointer-events: none;
+}
+
+.btn .btn-link .btn-text {
+  color: var(--Grayish-Blue);
+  font-family: "Public Sans light", sans-serif;
+  font-weight: 300;
+  font-size: 0.9em;
+  transition: var(--animation-primary);
+  pointer-events: all;
+  cursor: pointer;
+}
+
+.btn .btn-link .btn-text:hover {
+  color: var(--color-dark);
+}
+
+.btn.link {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-link {
+  position: relative;
+  display: inline-block;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-link .btn-content::after {
+  content: "";
+  bottom: 0%;
+  width: 100%;
+  left: 0%;
+  height: 3px;
+  background: rgb(40, 191, 117);
+  background: linear-gradient(90deg, rgba(40, 191, 117, 1) 13%, rgba(40, 191, 191, 1) 87%);
+  position: absolute;
+  transform: rotate(0.001deg) scaleX(0);
+  transition: transform var(--animation-primary);
+  transform-origin: middle;
+}
+
+.btn-text:hover + .btn-content::after,
+.btn-content:hover::after {
+  transform: rotate(0.001deg) scaleX(1); /* Reveal the underline fully */
+  transform-origin: center;
+}
